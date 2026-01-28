@@ -1,0 +1,74 @@
+[build-system]
+requires = ["setuptools>=45", "wheel", "setuptools_scm[toml]>=6.2"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "NutriVision-AI"
+version = "1.0.0"
+description = "AI Food Recognition & Calorie Counter using Groq Vision API"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [
+    { name = "Your Name", email = "your.email@example.com" }
+]
+keywords = ["ai", "food-recognition", "calorie-counter", "groq", "streamlit", "vision"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: End Users/Desktop",
+    "Natural Language :: English",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Internet :: WWW/HTTP :: Dynamic Content",
+]
+
+dependencies = [
+    "streamlit>=1.28.0",
+    "google-generativeai>=0.3.0",
+    "python-dotenv>=1.0.0",
+    "groq>=0.4.0",
+    "plotly>=5.0.0",
+    "numpy<2",
+    "pillow>=9.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "black>=22.0",
+    "flake8>=4.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/pouinei/NutriVision-AI"
+Documentation = "https://github.com/pouinei/NutriVision-AI/blob/main/README.md"
+Repository = "https://github.com/pouinei/NutriVision-AI.git"
+Issues = "https://github.com/pouinei/NutriVision-AI/issues"
+
+[tool.setuptools]
+packages = ["src"]
+
+[tool.black]
+line-length = 88
+target-version = ['py310']
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | _build
+  | buck-out
+  | build
+  | dist
+)/
+'''
+
+[tool.isort]
+profile = "black"
+line_length = 88
